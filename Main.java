@@ -66,3 +66,10 @@ public class Main {
 
             switch (choix) {
 
+
+            return "Cours: " + nomCours;
+        }
+    }
+
+    static class Etudiant {
+        String nom, prenom, matricule, password;
