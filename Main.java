@@ -66,3 +66,35 @@ public class Main {
 
             switch (choix) {
 
+		// ================= PARTIE 2 : INSCRIPTION ETUDIANT =================
+                case 1:
+                    String nom, prenom, password;
+
+                    do {
+                        System.out.print("Nom: ");
+                        nom = clavier.nextLine();
+                        if (nom.trim().isEmpty()) System.out.println("[Erreur] Le nom ne peut pas etre vide.");
+                    } while (nom.trim().isEmpty());
+
+                    do {
+                        System.out.print("Prenom: ");
+                        prenom = clavier.nextLine();
+                        if (prenom.trim().isEmpty()) System.out.println("[Erreur] Le prenom ne peut pas etre vide.");
+                    } while (prenom.trim().isEmpty());
+
+                    do {
+                        System.out.print("Mot de passe: ");
+                        password = clavier.nextLine();
+                        if (password.trim().isEmpty()) System.out.println("[Erreur] Le mot de passe ne peut pas etre vide.");
+                    } while (password.trim().isEmpty());
+
+                    // Generation automatique du matricule etudiant
+                    String matricule = "ETU00" + compteurEtu;
+                    Etudiant newEtu = new Etudiant(nom, prenom, matricule, password);
+                    etudiants.add(newEtu);
+                    compteurEtu++;
+                    System.out.println("\n=== Inscription validee ! ===");
+                    System.out.println(newEtu);
+                    break;
+
+
